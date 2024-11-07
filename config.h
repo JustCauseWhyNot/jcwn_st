@@ -5,11 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=24:antialias=true:autohint=true";
+static char *font = "mono:pixelsize=18:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-	"OpenMoji Color:pixelsize=24:true:antialias=true:autohint=true",
-	"Material Design Icons Desktop:pixelsize=24:hinting=true:antialias=true:autohint=true",
+	"OpenMoji Color:pixelsize=18:true:antialias=true:autohint=true",
+	"Material Design Icons Desktop:pixelsize=18:hinting=true:antialias=true:autohint=true",
 };
 
 static int borderpx = 0;
