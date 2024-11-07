@@ -6,7 +6,13 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "mono:pixelsize=24:antialias=true:autohint=true";
-static int borderpx = 2;
+/* Spare fonts */
+static char *font2[] = {
+	"OpenMoji Color:pixelsize=24:true:antialias=true:autohint=true",
+	"Material Design Icons Desktop:pixelsize=24:hinting=true:antialias=true:autohint=true",
+};
+
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -53,7 +59,7 @@ int allowwindowops = 0;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 2;
+static double minlatency = 0;
 static double maxlatency = 33;
 
 /*
@@ -73,8 +79,8 @@ static unsigned int cursorthickness = 2;
  *    Bold affects lines thickness if boxdraw_bold is not 0. Italic is ignored.
  * 0: disable (render all U25XX glyphs normally from the font).
  */
-const int boxdraw = 0;
-const int boxdraw_bold = 0;
+const int boxdraw = 1;
+const int boxdraw_bold = 1;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
 const int boxdraw_braille = 0;
@@ -86,7 +92,7 @@ const int boxdraw_braille = 0;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "st-direct";
 
 /*
  * spaces per tab
@@ -196,7 +202,7 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
 static Shortcut shortcuts[] = {
