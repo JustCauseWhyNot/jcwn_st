@@ -1864,7 +1864,7 @@ xsetcursor(int cursor)
 {
 	if (!BETWEEN(cursor, 0, 7)) /* 7: st extension */
 		return 1;
-	win.cursor = cursor;
+	win.cursor = (cursor ? cursor : cursorshape);
 	return 0;
 }
 
